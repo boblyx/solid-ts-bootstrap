@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Solid App</title>
+    <link rel="icon" href="favicon.ico">
+    <script>
+      function updateTheme(){
+        const colorMode = window.matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : "light";
+        document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+      }
+      updateTheme();
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <script src="/src/index.tsx" type="module"></script>
+  </body>
+</html>
