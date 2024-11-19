@@ -6,7 +6,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, process.cwd());
   return{
-    base: env.VITE_BASE_PATH,
+    //base: env.VITE_BASE_PATH,
     plugins: [
       /* 
         Uncomment the following line to enable solid-devtools.

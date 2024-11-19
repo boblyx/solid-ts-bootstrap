@@ -1,0 +1,12 @@
+services:
+  front:
+    restart: always
+    build: 
+      context: .
+      args:
+        - VITE_BASE_PATH=/my-path
+    image: tsboot:latest
+    environment:
+      VITE_BASE_PATH: /my-path
+    ports:
+      - 3001:3000
