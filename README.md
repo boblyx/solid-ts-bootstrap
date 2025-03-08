@@ -1,3 +1,13 @@
+# solid-ts-bootstrap
+Opinionated boilerplate.
+
+## Quickstart
+```bash
+cp default.env .env
+pnpm i
+pnpm dev
+```
+
 ## Usage
 
 Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.

@@ -2,7 +2,6 @@ import { onCleanup, onMount } from 'solid-js';
 import type { Component } from 'solid-js';
 import * as bootstrap from 'bootstrap';
 import { BASE } from '@src/Constants';
-
 const App: Component = () => {
   onMount(()=>{
        
