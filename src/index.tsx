@@ -11,6 +11,7 @@ import OtherPage from './pages/OtherPage';
 
 const root = document.getElementById('root');
 import { BASE } from './Constants';
+import Landing from './pages/Landing';
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error(
@@ -20,8 +21,10 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 
 render(() => 
       <Router>
-       <Route path={BASE} component={App}/>
-       <Route path={`${BASE}/other`}component={OtherPage}/>
+           <Route path={BASE} component={App}>
+               <Route path={`/`}component={Landing}/>
+               <Route path={`/other`}component={OtherPage}/>
+          </Route>
       </Router>
 
 , root!);

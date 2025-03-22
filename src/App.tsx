@@ -1,16 +1,35 @@
-import { onCleanup, onMount } from 'solid-js';
+import { createSignal, onCleanup, onMount, Switch, Match } from 'solid-js';
 import type { Component } from 'solid-js';
 import * as bootstrap from 'bootstrap';
+import { isMobile } from './utils/general';
 import { BASE } from '@src/Constants';
-const App: Component = () => {
+import Topbar from './components/Topbar';
+
+const [ready, setReady] = createSignal(false);
+const App: Component = (props:any) => {
   onMount(()=>{
-       
+    // Check if mobile or is desktop
+    setReady(true);
   });
   return (
     <>
-      <div class = "container-fluid p-4">
-        <h1>Hello world!</h1>
-        <p><a href={`${BASE}/other`}>Click here to go to the other page!</a></p>
+      <div class = "container-fluid p-3">
+        <Switch>
+            <Match when={ready() === true && isMobile()}>
+                <div>
+                    {/*Mobile Version*/}
+                    <Topbar/>
+                    {props.children}
+                </div>
+            </Match>
+            <Match when={ready() === true}>
+                <div>
+                    {/*Desktop version*/}
+                    <Topbar/>
+                    {props.children}
+                </div>
+            </Match>
+        </Switch>
       </div>
     </>
   )
