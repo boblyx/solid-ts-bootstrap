@@ -4,11 +4,13 @@ import * as bootstrap from 'bootstrap';
 import { isMobile } from './utils/general';
 import { BASE } from '@src/Constants';
 import Topbar from './components/Topbar';
+import {initDB} from './api/indexeddb';
 
 const [ready, setReady] = createSignal(false);
 const App: Component = (props:any) => {
   onMount(()=>{
     // Check if mobile or is desktop
+    initDB();
     setReady(true);
   });
   return (
